@@ -3,18 +3,23 @@ use std::fs::File;
 use ndarray::{ Array, Array1, Array2 };
 use linfa::Dataset;
 
+#   The get_dataset function reads the csv file, parses its content, prepares a dataset
+#   with its contents, and returns the prepared dataset
+
 fn get_dataset() -> Dataset<f32, i32, ndarray::Dim<[usize; 1]>> {
-    let mut reader = Reader::from_path("./src/heart.csv").unwrap();
-   
-    let headers = get_headers(&mut reader);
+    let mut reader = Reader::from_path("./src/heart.csv").unwrap();  #  Initialize a reader pointing to ./src/heart.csv
+    
+#   Adding the definitions for get_headers, get_data, get_records, and get_targets 
+    
+    let headers = get_headers(&mut reader); #   extract the headers and data from reader
     let data = get_data(&mut reader);
-    let target_index = headers.len() - 1;
+    let target_index = headers.len() - 1;   #   calculate the index of target in the headers
     
     let features = headers[0..target_index].to_vec();
-    let records = get_records(&data, target_index);
+    let records = get_records(&data, target_index); #   retrieve the records and targets from data
     let targets = get_targets(&data, target_index);
    
-    return Dataset::new(records, targets)
+    return Dataset::new(records, targets)   #   build the dataset with records, targets, and features, then return
       .with_feature_names(features);
    }
 
@@ -52,7 +57,7 @@ fn get_dataset() -> Dataset<f32, i32, ndarray::Dim<[usize; 1]>> {
       )
       .collect::<Vec<Vec<f32>>>();
    }
-
+#   Ending the function and to see how the dataset looks
    fn main() {
     let dataset = get_dataset();
     println!("{:?}", dataset);
