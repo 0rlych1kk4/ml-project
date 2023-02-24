@@ -10,4 +10,16 @@
 #
 # Lastly, run the command:
   cargo build
-  
+ 
+# To Prepare the Dataset
+Machine Learning models requires external data to be trained. I provided an sample csv data for this exercise but later you’ll          learn how to prepare your own dataset from a csv file.
+You can get a dataset from Kaggle.
+
+Once you have downloaded the dataset, extract the csv file into your project’s src folder.
+
+.
+├── Cargo.lock
+├── Cargo.toml
+└── src
+    ├── heart.csv
+    └── main.rs
