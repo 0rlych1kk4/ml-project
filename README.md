@@ -1,8 +1,6 @@
+# ml-project
 ![GitHub License](https://img.shields.io/github/license/0rlych1kk4/ml-project)
 
-
-# ml-project
-#
 # create a new project
   cargo new --bin ml-project
 #
@@ -20,6 +18,8 @@ You can get a dataset from Kaggle.
 
 Once you have downloaded the dataset, extract the csv file into your project’s src folder.
 
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 .
 ├── Cargo.lock
 ├── Cargo.toml
