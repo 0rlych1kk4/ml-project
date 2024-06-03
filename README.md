@@ -1,3 +1,6 @@
+![GitHub License](https://img.shields.io/github/license/0rlych1kk4/ml-project)
+
+
 # ml-project
 #
 # create a new project
